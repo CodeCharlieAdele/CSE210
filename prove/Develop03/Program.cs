@@ -11,14 +11,14 @@ class Program
 
         string userInput = "";
 
-        while (userInput != "quit" || scripture.HasWordsLeft() == true)
+        while (userInput != "quit" && scripture.HasWordsLeft() == true)
         {
             Console.Clear();
             Console.WriteLine(scripture.GetScripture());
             Console.WriteLine();
             
             Console.WriteLine("Press enter to continue or type 'quit' to finish");
-            Console.ReadLine();
+            userInput = Console.ReadLine();
             scripture.RemoveWords();
         }
         
