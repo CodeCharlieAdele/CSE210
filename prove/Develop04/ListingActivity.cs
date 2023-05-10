@@ -12,9 +12,17 @@ public class ListingActivity
 
     };
 
+    public string RelfectionPrompt() 
+    {
+        Random rand = new Random();
+        int index = rand.Next(listingPrompt.Count);
+        return listingPrompt[index];
+    }
     public void UserList()
     {
-
+        Console.WriteLine("Please start listing:");
+        Console.Write("1. ");
+        
     }
 
 

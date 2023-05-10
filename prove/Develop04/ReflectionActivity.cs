@@ -23,14 +23,17 @@ public class ReflectionActivity
         "How can you keep this experience in mind in the future?",
     };
 
-    public void GetRandomQuestion()
+    public string RelfectionPrompt() 
     {
-
+        Random rand = new Random();
+        int index = rand.Next(reflectionPrompt.Count);
+        return reflectionPrompt[index];
     }
-
-    public void DisplayQuestion()
+    public string RandomQuestion()
     {
-
+        Random rand = new Random();
+        int index = rand.Next(Questions.Count);
+        return Questions[index];
     }
 
 }
