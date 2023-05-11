@@ -3,7 +3,7 @@ public class Activity
 {
     private string activityName;
     private string activityDescription;
-    private int activityTime;
+    protected int activityTime;
 
     public Activity(string _activityName, string _activityDesctiption, int _activityTime)
     {
@@ -34,7 +34,7 @@ public class Activity
         LoadingDots();
     }
 
-    public DateTime ActivityTime()
+    public DateTime ActivityLength(int activityTime)
     {
         int seconds = activityTime;
         DateTime startTime = DateTime.Now;
@@ -54,37 +54,27 @@ public class Activity
         animationStrings.Add("/");
         animationStrings.Add("-");
         animationStrings.Add("\\");
+        animationStrings.Add("|");
+        animationStrings.Add("/");
 
-        int i = 0;
-
-        while (DateTime.Now < ActivityTime())
+        foreach (string s in animationStrings)
         {
-            string s = animationStrings[i];
             Console.Write(s);
             Thread.Sleep(1000);
             Console.Write("\b \b");
-
-            i++;
-
-            if (i >= animationStrings.Count)
-            {
-                i = 0;
-            }
         }
+        
     }
 
     public void Countdown()
     {
-        while (DateTime.Now < ActivityTime())
+        for (int i = 6; i > 0; i--)
         {
-            for (int i = 8; i > 0; i--)
-            {
-                Console.Write("i");
-                Thread.Sleep(1000);
-                Console.Write("\b \b");
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
 
-                //might still need something after some testing
-            }
+            //might still need something after some testing
         }
     }
 
@@ -97,15 +87,4 @@ public class Activity
             }
     }
 
-   // public string DisplayStartingMessage()
-   // {
-   //     string startingMessage = StartingMessage();
-   //     return startingMessage;
-   // }
-
-   // public string DisplayEndingMessage()
-   // {
-   //     string endingMessage = EndingMessage();
-   //     return endingMessage;
-   // }
 }

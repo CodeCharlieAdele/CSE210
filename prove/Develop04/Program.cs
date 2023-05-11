@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
+        BreathingActivity breathingActivity = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. CLear your mind and focus on your breathing.", 0);
+        ReflectionActivity reflectionActivity = new ReflectionActivity("Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", 0);
+        ListingActivity listingActivity = new ListingActivity("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 0);
+
         int menuUserinput = 0;
         
         List<string> menu = new List<string>
@@ -36,15 +40,15 @@ class Program
             switch (menuUserinput)
             {
                 case 1:
-                    Console.WriteLine("working 1");
+                    breathingActivity.RunBreathing();
                     break;
 
                 case 2:
-                    Console.WriteLine("working 2");
+                    reflectionActivity.RunReflection();
                     break;
 
                 case 3:
-                    Console.WriteLine("working 3");
+                    listingActivity.RunListing();
                     break;
 
                 case 4:
