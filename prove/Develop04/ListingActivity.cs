@@ -27,25 +27,39 @@ public class ListingActivity : Activity
         string listPrompt = listingPrompt[index];
         Console.WriteLine($"\n{listPrompt}");
     }
-    public void UserList()
-    {
-        Console.Write(">");
-        string input = Console.ReadLine();
-        userListing.Add(input);
-    }
 
-    public void RunListing()
-    {
-        StartingMessage();
-        RandomListingPrompt();
-        Countdown();
-        while (DateTime.Now < ActivityLength(activityTime))
+   public void RunListing()
+   {
+       StartingMessage();
+       DateTime endTime = ActivityLength();
+       RandomListingPrompt();
+       Countdown();
+       while (startTime < endTime)
+       {
+           Console.Write(">");
+            string input = Console.ReadLine();
+            userListing.Add(input);
+           startTime = DateTime.Now;
+       }
+       Console.WriteLine($"You listed {userListing.Count} things.");
+       SaveList();
+       EndingMessage();
+   }
+
+   public int SaveList()
         {
-            UserList();
+            Console.WriteLine($"\nPlease enter a filename to save the journal:");
+            string filename = Console.ReadLine();
+            System.IO.StreamWriter file = new System.IO.StreamWriter(filename);
+            foreach (string entry in userListing)
+            {
+                file.WriteLine(entry);
+            }
+            file.Close();
+            Console.WriteLine($"\nJournal saved to {filename}.");
+            return 1;
+
         }
-        Console.WriteLine($"You listed {userListing.Count} things.");
-        EndingMessage();
-    }
 
 
 }

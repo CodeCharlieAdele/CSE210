@@ -49,12 +49,14 @@ public class ReflectionActivity : Activity
     {
         StartingMessage();
         RandomRelfectionPrompt();
-        while (DateTime.Now < ActivityLength(activityTime))
+         DateTime endTime = ActivityLength();
+        while (startTime < endTime)
         {
             Spinner();
+            startTime = DateTime.Now;
             RandomQuestion();
+            startTime = DateTime.Now;
         }
         EndingMessage();
     }
-
-}
+   }

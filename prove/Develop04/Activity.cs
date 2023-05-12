@@ -5,6 +5,9 @@ public class Activity
     private string activityDescription;
     protected int activityTime;
 
+    protected DateTime startTime = DateTime.Now;
+    //protected DateTime endTime = DateTime.Now.AddSeconds(activityTime);
+
     public Activity(string _activityName, string _activityDesctiption, int _activityTime)
     {
         activityName        = _activityName;
@@ -14,14 +17,15 @@ public class Activity
 
     public void StartingMessage()
     {
-        Console.WriteLine($"Welcome to the {activityName}.");
-        Console.WriteLine($"{activityDescription}");
+        Console.WriteLine($"Welcome to the {activityName}. ");
+        Console.WriteLine($"{activityDescription} ");
         
-        Console.Write("How long, in seconds, would you like for your session to last?");
+        Console.Write("How long, in seconds, would you like for your session to last? ");
         string userInput = Console.ReadLine();
         activityTime = int.Parse(userInput);
+        //DateTime endTime = DateTime.Now.AddSeconds(activityTime);
         
-        Console.WriteLine($"\nThank you, your activity will start soon");
+        Console.WriteLine($"\nThank you, your activity will start soon" );
         LoadingDots();
 
     }
@@ -30,16 +34,16 @@ public class Activity
     {
         Console.WriteLine("Well done!");
         LoadingDots();
-        Console.WriteLine($"You have completed another {activityTime} of the {activityName}.");
+        Console.WriteLine($"You have completed another {activityTime} seconds of the {activityName}.");
         LoadingDots();
     }
 
-    public DateTime ActivityLength(int activityTime)
+    public DateTime ActivityLength()
     {
         int seconds = activityTime;
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds);
-
+    
         return endTime;
     }
 
@@ -73,8 +77,6 @@ public class Activity
             Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b \b");
-
-            //might still need something after some testing
         }
     }
 
