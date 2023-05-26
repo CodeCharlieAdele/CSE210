@@ -46,8 +46,10 @@ class AllGoals
 
         foreach (Goal goal in allGoals)
         {
-        //    saveGoals.Add(goal);
+            saveGoals.Add(goal.ToCVSRecord());
         }
+
+        Console.WriteLine("Goals saved.");
     }
 
     public void LoadGoals()
