@@ -30,7 +30,7 @@ class Program
 
         AllGoals allGoals = new AllGoals();
 
-        //Goal.getGoalPoints();
+        //Goal.DisplayGetGoalPoints();
 
         while (menuUserinput != 7)
         {

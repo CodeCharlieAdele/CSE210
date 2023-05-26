@@ -46,13 +46,8 @@ class AllGoals
 
         foreach (Goal goal in allGoals)
         {
-
+        //    saveGoals.Add(goal);
         }
-    }
-
-    public void SaveLoadCSV()
-    {
-        
     }
 
     public void LoadGoals()
@@ -96,7 +91,7 @@ class AllGoals
        Console.WriteLine("The goals are:");
        foreach (Goal goal in allGoals)
        {
-           Console.WriteLine(string.Format("{0} {1}", allGoals.IndexOf(goal) + 1, goal.getGoalName()));
+           Console.WriteLine(string.Format("{0} {1}", allGoals.IndexOf(goal), goal.getGoalName()));
        }
        Console.Write("Which goal did you accomplish? ");
        int recordEvent = int.Parse(Console.ReadLine());
