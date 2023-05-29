@@ -1,34 +1,17 @@
 
-class Customer
-{
-
-    private string customerName;
-    //private string customerAddress;
-    private bool isUSACustomer;
-
-
-    public void IsUSACustomer()
+public class Customer
     {
+        public string _name { get; }
+        public Address Address { get; }
 
+        public Customer(string name, Address address)
+        {
+            _name = name;
+            Address = address;
+        }
+
+        public bool IsInUSA()
+        {
+            return Address.IsInUSA();
+        }
     }
-
-    public void GetCustomerName()
-    {
-
-    }
-
-    public void SetCustomerName()
-    {
-
-    }
-
-    public void GetCustomerAddress()
-    {
-
-    }
-
-    public void SetCustomerAddress()
-    {
-        
-    }
-}

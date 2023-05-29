@@ -1,55 +1,16 @@
-
-class Product
-{
-    private string productName;
-    private int productID;
-    private double productBasePrice;
-    private int productQuantity;
-    //private double productSalePrice;
-
-    public double ProductSalePrice()
+public class Product
     {
-         return productBasePrice * productQuantity;
-    }
+        public string Name { get; set; }
+        public string Id { get; set; }
+        public decimal Price { get; set; }
+        public int Quantity { get; set; }
 
-    public void GetProductName()
-    {
+        public Product(string name, string id, decimal price, int quantity)
+        {
+            Name = name;
+            Id = id;
+            Price = price;
+            Quantity = quantity;
+        }
 
     }
-
-    public void SetProductName()
-    {
-
-    }
-
-    public void GetProductID()
-    {
-
-    }
-
-    public void SetProductID()
-    {
-        
-    }
-
-    public void GetProductPrice()
-    {
-
-    }
-
-    public void SetProductPrice()
-    {
-        
-    }
-
-    public void GetProductQuantitiy()
-    {
-
-    }
-
-    public void SetProductQuantity()
-    {
-        
-    }
-
-}
