@@ -1,12 +1,12 @@
 
 public class Customer
     {
-        public string _name { get; }
+        public string Name { get; }
         public Address Address { get; }
 
         public Customer(string name, Address address)
         {
-            _name = name;
+            Name = name;
             Address = address;
         }
 
