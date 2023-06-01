@@ -25,19 +25,20 @@ class Program
         videos.Add(vid3);
 
         foreach (var video in videos)
+        {
+            Console.WriteLine("\n");
+            Console.WriteLine($"Title: {video.Title}");
+            Console.WriteLine($"Author: {video.Author}");
+            Console.WriteLine($"Length (in seconds): {video.Length}");
+            Console.WriteLine($"Number of comments: {video.GetNumberOfComments()}");
+
+            foreach (var comment in video.GetComments())
             {
-                Console.WriteLine($"Title: {video.Title}");
-                Console.WriteLine($"Author: {video.Author}");
-                Console.WriteLine($"Length (in seconds): {video.Length}");
-                Console.WriteLine($"Number of comments: {video.GetNumberOfComments()}");
-
-                foreach (var comment in video.GetComments())
-                {
-                    Console.WriteLine($"Comment by {comment.Name}: {comment.Text}");
-                }
-
-                Console.WriteLine();
+                Console.WriteLine($"Comment by {comment.Name}: {comment.Text}");
             }
+
+            Console.WriteLine();
+        }
 
 
 
